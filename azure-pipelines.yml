@@ -1,0 +1,13 @@
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'AzureRmPipeline-conn'
+    subscriptionId: '25fe6aff-f49f-4d96-af24-fdd452c9818e'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'newarmgroup'
+    location: 'Eas'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/srigazure/testrepository/main/create_web_app/azuredeploy.json'
+    overrideParameters: '-projectName sriprojectone'
+    deploymentMode: 'Incremental'
+    deploymentName: 'deploytemplate'
